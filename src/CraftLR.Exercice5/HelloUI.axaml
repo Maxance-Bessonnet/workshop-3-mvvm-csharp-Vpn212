@@ -1,4 +1,21 @@
-<Window xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        x:Class="CraftLR.Exercice5.HelloUI" Title="Hello you !">
-    <StackPanel />
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="CraftLR.Exercice5.HelloUI"
+        Title="Hello you !"
+        Width="250" Height="250"
+        RequestedThemeVariant="Dark">
+
+    <StackPanel Orientation="Vertical" Spacing="15" Margin="20">
+
+        <TextBlock Text="What is your name?" />
+
+        <TextBox Name="NameTB" Watermark="Écrivez ici..." />
+
+        <TextBlock Name="GreetingTB"
+                   Text="{Binding Path=Text, ElementName=NameTB, StringFormat='Hello, {0}!'}"
+                   HorizontalAlignment="Center"
+                   FontWeight="Bold"
+                   FontSize="18" />
+
+    </StackPanel>
 </Window>
